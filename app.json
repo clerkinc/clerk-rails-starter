@@ -1,0 +1,16 @@
+{
+  "name": "clerk-rails-starter",
+  "description": "Official guide on how to add authentication to Rails with Clerk.dev",
+  "repository": "https://github.com/clerkinc/clerk-rails-starter",
+  "keywords": ["rails", "clerk", "authentication"],
+  "env": {
+    "CLERK_FRONTEND_API": {
+      "description": "The hostname of Clerk Frontend API used for authentication.",
+      "value": "TODO"
+    },
+    "CLERK_API_KEY": {
+      "description": "The secret key for accessing the Clerk Backend API.",
+      "value": "TODO"
+    }
+  }
+}

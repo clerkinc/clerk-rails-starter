@@ -1,0 +1,5 @@
+<% if current_user.present? %>
+  <h1>Hi <%= current_user["first_name"] %>!</h1>
+<% else %>
+  <h1>Yay! You&rsquo;re on Rails!</h1>
+<% end %>
