@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/clerkinc/clerk-sdk-ruby.git
+  revision: 6d2fac53e69f9b67423704cf71312701c4de7aac
+  branch: authv2-ssr-poc
+  specs:
+    clerk-sdk-ruby (1.0.3)
+      faraday (~> 1.4.1)
+      jwt (~> 2.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -76,8 +85,6 @@ GEM
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
     childprocess (3.0.0)
-    clerk-sdk-ruby (1.0.2)
-      faraday (~> 1.4.1)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     dotenv (2.7.6)
@@ -85,7 +92,7 @@ GEM
       dotenv (= 2.7.6)
       railties (>= 3.2)
     erubi (1.10.0)
-    faraday (1.4.2)
+    faraday (1.4.3)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -97,7 +104,7 @@ GEM
     faraday-em_synchrony (1.0.0)
     faraday-excon (1.1.0)
     faraday-net_http (1.0.1)
-    faraday-net_http_persistent (1.1.0)
+    faraday-net_http_persistent (1.2.0)
     ffi (1.15.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -105,6 +112,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
+    jwt (2.2.3)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -169,7 +177,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.1.1)
-    ruby2_keywords (0.0.4)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.0)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -230,7 +238,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
-  clerk-sdk-ruby (~> 1.0.2)
+  clerk-sdk-ruby (~> 1.0.2)!
   dotenv-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
@@ -249,7 +257,7 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 3.0.0p0
+   ruby 3.0.1p64
 
 BUNDLED WITH
-   2.2.19
+   2.2.24

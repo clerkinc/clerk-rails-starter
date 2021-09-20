@@ -3,7 +3,7 @@ window.startClerk = async () => {
 
   try {
     // Load Clerk environment & session if available
-    await Clerk.load();
+    await Clerk.load({ authVersion: 2});
 
     if (Clerk.user) {
       // Mount user button component

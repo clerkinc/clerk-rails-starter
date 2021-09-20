@@ -41,3 +41,4 @@ yarn-debug.log*
 
 # Env vars
 .env.local
+.env

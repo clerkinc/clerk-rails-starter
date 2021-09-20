@@ -1,4 +1,5 @@
 require_relative "boot"
+require_relative "../app/middleware/auth_v2_middleware"
 
 require "rails/all"
 
@@ -10,6 +11,8 @@ module ClerkRailsStarter
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+
+    config.middleware.use AuthV2Middleware
 
     # Configuration for the application, engines, and railties goes here.
     #

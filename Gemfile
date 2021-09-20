@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.0'
+ruby '3.0.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
@@ -68,5 +68,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "dotenv-rails", groups: [:development, :test]
 
 # Clerk Ruby SDK
-gem "clerk-sdk-ruby", "~> 1.0.2", require: "clerk"
-
+gem "clerk-sdk-ruby", "~> 1.0.2", require: "clerk", github: "clerkinc/clerk-sdk-ruby", branch: "authv2-ssr-poc"
