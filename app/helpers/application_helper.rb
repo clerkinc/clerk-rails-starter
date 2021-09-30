@@ -8,7 +8,8 @@ module ApplicationHelper
       {
         'data-clerk-frontend-api': ENV.fetch('CLERK_FRONTEND_API'),
         crossorigin: 'anonymous',
-        onload: 'startClerk()'
+        onload: 'startClerk()',
+        defer: true,
       }
     )
   end

@@ -5,11 +5,16 @@ window.startClerk = async () => {
     // Load Clerk environment & session if available
     await Clerk.load({ authVersion: 2});
 
-    if (Clerk.user) {
-      // Mount user button component
-      const userButtonEl = document.getElementById('user-button');
-      Clerk.mountUserButton(userButtonEl);
+    function mountUserButton() {
+      if (Clerk.user && !document.getElementById('user-button').hasChildNodes()) {
+        const userButtonEl = document.getElementById('user-button');
+        Clerk.mountUserButton(userButtonEl);
+      }
     }
+
+    document.addEventListener("turbolinks:load", mountUserButton);
+
+    mountUserButton();
   } catch (err) {
     console.error('Clerk: ', err);
   }
