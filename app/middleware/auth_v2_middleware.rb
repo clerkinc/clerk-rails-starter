@@ -149,8 +149,6 @@ class AuthV2Middleware
   end
 
   def cross_origin_request?(req)
-    return true if req.params["crossorigin"] # TMP for testing
-
     origin = req.env["HTTP_ORIGIN"]
     origin && origin != req.host
   end
