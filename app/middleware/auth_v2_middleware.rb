@@ -118,16 +118,7 @@ class AuthV2Middleware
 
               try {
                 await Clerk.load({authVersion: 2});
-                console.log('Clerk loaded, refreshing the page...');
-
-                let url = new URL(window.location.toString());
-                let params = new URLSearchParams(url.search);
-                params.delete('interstitial');
-                var newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname;
-                if (params.toString() !== "" ) {
-                  newUrl = newUrl + '?' + params.toString();
-                }
-                window.location.replace(newUrl);
+                window.location.replace(new URL(window.location.toString()));
               } catch (err) {
                 console.error('Clerk: ', err);
               }
