@@ -12,6 +12,7 @@ module ClerkRailsStarter
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
+    #config.middleware.use Clerk::RackMiddleware
     config.middleware.use AuthV2Middleware
 
     # Configuration for the application, engines, and railties goes here.
