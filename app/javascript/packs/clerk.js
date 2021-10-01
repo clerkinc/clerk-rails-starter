@@ -6,7 +6,7 @@ window.startClerk = async () => {
     await Clerk.load({authVersion: 1});
 
     function mountUserButton() {
-      if (Clerk.user && !document.getElementById('user-button').hasChildNodes()) {
+      if (Clerk.user && document.getElementById('user-button') && !document.getElementById('user-button').hasChildNodes()) {
         const userButtonEl = document.getElementById('user-button');
         Clerk.mountUserButton(userButtonEl);
       }
