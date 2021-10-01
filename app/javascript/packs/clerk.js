@@ -3,7 +3,7 @@ window.startClerk = async () => {
 
   try {
     // Load Clerk environment & session if available
-    await Clerk.load({authVersion: 1});
+    await Clerk.load({ authVersion: 2});
 
     function mountUserButton() {
       if (Clerk.user && !document.getElementById('user-button').hasChildNodes()) {
