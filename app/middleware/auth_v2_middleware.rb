@@ -13,10 +13,6 @@ class AuthV2Middleware
     @cookie_token = @req.cookies["__session"]
     @client_uat = @req.cookies["__client_uat"]
 
-    log "processing... \n"                              \
-        "\t\t Authorization=#{@header_token.inspect}\n" \
-        "\t\t __session cookie=#{@cookie_token.inspect}"
-
     ##########################################################################
     #                                                                        #
     #                          HEADER AUTHENTICATION                         #
@@ -34,8 +30,6 @@ class AuthV2Middleware
 
     # in cross-origin XHRs the use of Authorization header is mandatory.
     if cross_origin_request?(@req) && @header_token.nil?
-      log "cross-origin request without authorization header"
-
       return signed_out
     end
 
@@ -44,16 +38,11 @@ class AuthV2Middleware
     #                             COOKIE AUTHENTICATION                      #
     #                                                                        #
     ##########################################################################
-    log "proceeding to cookie authentication..."
-
     if development_or_staging? && (@req.referrer.nil? || cross_origin_request?(@req))
-      log "development + empty referrer or cross-origin request"
-
       return unknown(interstitial: true)
     end
 
     if production? && @client_uat.nil?
-      log "production? && client_uat.nil"
       return signed_out
     end
 
@@ -67,9 +56,6 @@ class AuthV2Middleware
       return signed_in(token)
     end
 
-    log "fallthrough (client_uat: #{@client_uat} | cookie_token: #{@cookie_token})"
-    log "token: #{token}"
-
     unknown(interstitial: true)
   end
 
@@ -77,28 +63,18 @@ class AuthV2Middleware
 
   # Outcome A
   def signed_in(token)
-    log "200 signed_in"
-
     @env["clerk"] = ClerkProxy.new(session_token: token)
-
-    #[200, {}, ["200 - You may pass!\n"]]
 
     @app.call(@env)
   end
 
   # Outcome B
   def signed_out
-    log "403 signed-out (client_uat=#{@client_uat})"
-
-    #[403, {}, ["403 - Signed out\n"]]
-    #
     @app.call(@env)
   end
 
   # Outcome C
   def unknown(interstitial: false)
-    log "401 unknown (interstitial=#{interstitial})"
-
     return [401, {}, []] if !interstitial
 
     script_url = ENV["CLERKJS_SCRIPT_URL"].presence ||
@@ -159,17 +135,12 @@ class AuthV2Middleware
     begin
       @session = sdk.verify_token(token)
     rescue JWT::DecodeError, JWT::RequiredDependencyError => e
-      log(e)
       false
     end
   end
 
   def sdk
     @sdk ||= Clerk::SDK.new
-  end
-
-  def log(s)
-    Rails.logger.debug "\t[clerk] path=#{@req.path} #{s}"
   end
 end
 
@@ -187,9 +158,10 @@ class ClerkProxy
     raise "TODO"
   end
 
+  # TODO: return the actual user info
   def user
     return nil if user_id.nil?
-    # TODO: return the actual user info
+
     user_id
   end
 
