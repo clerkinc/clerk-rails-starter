@@ -130,7 +130,19 @@
 
         <p style="font-size: 18px; color: #666;">
           <% if current_user.present? %>
-            You are logged in! (<%= current_user %>)
+            You are logged in!
+            <br />
+            <br />
+            <%= clerk_verify_session %>
+            <br />
+            <br />
+            <strong>Session claims:</strong> <%= clerk_session_claims %>
+            <br />
+            <br />
+            <strong>Session token:</strong> <%= clerk_session_token %>
+            <br />
+            <br />
+            <strong>User:</strong> <%= current_user %>
           <% else %>
             You are logged out.
           <% end %>

@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/clerkinc/clerk-sdk-ruby.git
-  revision: 6d2fac53e69f9b67423704cf71312701c4de7aac
-  branch: authv2-ssr-poc
+  revision: a5941b07fc51d012e5ce92aabca7f32d3390ccdf
+  branch: authv2-middleware-v3
   specs:
     clerk-sdk-ruby (1.0.3)
       faraday (~> 1.4.1)
@@ -112,7 +112,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
-    jwt (2.2.3)
+    jwt (2.3.0)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
