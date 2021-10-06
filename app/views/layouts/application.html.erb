@@ -131,22 +131,32 @@
         <p style="font-size: 18px; color: #666;">
           <% if current_user.present? %>
             You are logged in!
-            <br />
-            <br />
-            <%= clerk_verify_session %>
-            <br />
-            <br />
-            <strong>Session claims:</strong> <%= clerk_session_claims %>
-            <br />
-            <br />
-            <strong>Session token:</strong> <%= clerk_session_token %>
-            <br />
-            <br />
-            <strong>User:</strong> <%= current_user %>
           <% else %>
             You are logged out.
           <% end %>
         </p>
+
+        <br /><br />
+        <section style="margin: 10; padding: 10px; font-size: 14px;
+          text-align: left; border: 1px solid; color: #333">
+          <strong>clerk_user (requests API; cached afterwards):</strong>
+          <br /><%= current_user.inspect %>
+          <hr/>
+          <strong>clerk_verify_session (requests API)</strong>:
+          <br /><%= clerk_verify_session.inspect %>
+          <hr/>
+          <strong>clerk_user_id:</strong>
+          <br /><%= clerk_user_id.inspect %>
+          <hr/>
+          <strong>clerk_user:</strong>
+          <br /><%= current_user.inspect %>
+          <hr/>
+          <strong>clerk_session_claims:</strong>
+          <br /><%= clerk_session_claims.inspect %>
+          <hr/>
+          <strong>clerk_session_token:</strong>
+          <br /><%= clerk_session_token.inspect %>
+        </section>
       </section>
     </div>
   </body>
