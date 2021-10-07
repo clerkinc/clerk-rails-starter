@@ -139,11 +139,14 @@
         <br /><br />
         <section style="margin: 10; padding: 10px; font-size: 14px;
           text-align: left; border: 1px solid; color: #333">
+          <strong>clerk_session (requests API the 1st time)</strong>:
+          <br /><%= clerk_session.inspect %>
+          <hr/>
           <strong>clerk_user (requests API; cached afterwards):</strong>
           <br /><%= current_user.inspect %>
           <hr/>
-          <strong>clerk_verify_session (requests API)</strong>:
-          <br /><%= clerk_verify_session.inspect %>
+          <strong>clerk_reverify_session! (requests API)</strong>:
+          <br /><%= clerk_reverify_session!.inspect %>
           <hr/>
           <strong>clerk_user_id:</strong>
           <br /><%= clerk_user_id.inspect %>
@@ -151,11 +154,11 @@
           <strong>clerk_user:</strong>
           <br /><%= current_user.inspect %>
           <hr/>
-          <strong>clerk_session_claims:</strong>
-          <br /><%= clerk_session_claims.inspect %>
+          <strong>clerk_verified_session_claims:</strong>
+          <br /><%= clerk_verified_session_claims.inspect %>
           <hr/>
-          <strong>clerk_session_token:</strong>
-          <br /><%= clerk_session_token.inspect %>
+          <strong>clerk_verified_session_token:</strong>
+          <br /><%= clerk_verified_session_token.inspect %>
         </section>
       </section>
     </div>

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/clerkinc/clerk-sdk-ruby.git
-  revision: d5fa0165af1596a92369c7a37e8c426717bbfad8
+  revision: 88b638d87fcf42f45d9b67a73d9d88f8b48aa316
   branch: authv2-middleware-v3
   specs:
     clerk-sdk-ruby (1.0.3)
