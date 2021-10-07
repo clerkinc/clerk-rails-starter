@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/clerkinc/clerk-sdk-ruby.git
-  revision: 88b638d87fcf42f45d9b67a73d9d88f8b48aa316
-  branch: authv2-middleware-v3
+  revision: bda0fb48aebca458f1714205ef2667cb2e5e8f39
+  branch: v2
   specs:
-    clerk-sdk-ruby (1.0.3)
+    clerk-sdk-ruby (2.0.0.rc.1)
       faraday (~> 1.4.1)
       jwt (~> 2.2)
 
@@ -238,7 +238,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
-  clerk-sdk-ruby (~> 1.0.2)!
+  clerk-sdk-ruby!
   dotenv-rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
