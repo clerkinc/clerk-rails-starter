@@ -68,4 +68,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "dotenv-rails", groups: [:development, :test]
 
 # Clerk Ruby SDK
-gem "clerk-sdk-ruby", require: "clerk", github: "clerkinc/clerk-sdk-ruby", branch: "v2"
+#gem "clerk-sdk-ruby", require: "clerk", github: "clerkinc/clerk-sdk-ruby", branch: "v2"
+gem 'clerk-sdk-ruby', '~> 2.0.0.alpha.1'
