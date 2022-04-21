@@ -20,3 +20,6 @@ module ClerkRailsStarter
     # config.eager_load_paths << Rails.root.join("extras")
   end
 end
+
+require_relative "../lib/clerk_extensions"
+Clerk::RackMiddlewareV2.prepend ClerkExtensions
